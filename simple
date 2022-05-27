@@ -1,4 +1,4 @@
-[ {
+{
   "@id" : "http://niem/test",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
@@ -7,4 +7,4 @@
 }, {
   "@id" : "http://niem/test#Person",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-} ]
+}
