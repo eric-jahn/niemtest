@@ -1,123 +1,124 @@
-@prefix : <urn:absolute:niem/test#> .
+@prefix : <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix niem: <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <urn:absolute:niem/test> .
+@base <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test> .
 
-<urn:absolute:niem/test> rdf:type owl:Ontology ;
-                          owl:versionIRI <urn:absolute:v0.0.1> .
+<https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test> rdf:type owl:Ontology ;
+                                                                         owl:versionIRI <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test:v0.0.1> .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  urn:absolute:niem/test#isPrivate
-:isPrivate rdf:type owl:ObjectProperty ;
-           rdfs:domain owl:Thing ;
-           rdfs:range [ rdf:type owl:Restriction ;
-                        owl:onProperty :private ;
-                        owl:someValuesFrom xsd:boolean
-                      ] .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#isPrivate
+niem:isPrivate rdf:type owl:ObjectProperty ;
+               rdfs:domain owl:Thing ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty niem:private ;
+                            owl:someValuesFrom xsd:boolean
+                          ] .
 
 
-###  urn:absolute:niem/test#ownedItem
-:ownedItem rdf:type owl:ObjectProperty ;
-           rdfs:domain :Ownership ;
-           rdfs:range :Person .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#ownedItem
+niem:ownedItem rdf:type owl:ObjectProperty ;
+               rdfs:domain niem:Ownership ;
+               rdfs:range niem:Person .
 
 
-###  urn:absolute:niem/test#owner
-:owner rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf owl:topObjectProperty ;
-       rdfs:domain :Ownership ;
-       rdfs:range :Item .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#owner
+niem:owner rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain niem:Ownership ;
+           rdfs:range niem:Item .
 
 
-###  urn:absolute:niem/test#ownsItem
-:ownsItem rdf:type owl:ObjectProperty ;
-          rdfs:domain :Person ;
-          rdfs:range :Item .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#ownsItem
+niem:ownsItem rdf:type owl:ObjectProperty ;
+              rdfs:domain niem:Person ;
+              rdfs:range niem:Item .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  urn:absolute:niem/test#name
-:name rdf:type owl:DatatypeProperty ;
-      rdfs:domain owl:Thing ;
-      rdfs:range xsd:string .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#name
+niem:name rdf:type owl:DatatypeProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range xsd:string .
 
 
-###  urn:absolute:niem/test#private
-:private rdf:type owl:DatatypeProperty ;
-         rdfs:range xsd:boolean .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#private
+niem:private rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:boolean .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  urn:absolute:niem/test#Bird
-:Bird rdf:type owl:Class ;
-      rdfs:subClassOf :Item .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Bird
+niem:Bird rdf:type owl:Class ;
+          rdfs:subClassOf niem:Item .
 
 
-###  urn:absolute:niem/test#Item
-:Item rdf:type owl:Class .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Item
+niem:Item rdf:type owl:Class .
 
 
-###  urn:absolute:niem/test#Map
-:Map rdf:type owl:Class ;
-     rdfs:subClassOf :Item .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Map
+niem:Map rdf:type owl:Class ;
+         rdfs:subClassOf niem:Item .
 
 
-###  urn:absolute:niem/test#Ownership
-:Ownership rdf:type owl:Class .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Ownership
+niem:Ownership rdf:type owl:Class .
 
 
-###  urn:absolute:niem/test#Person
-:Person rdf:type owl:Class .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Person
+niem:Person rdf:type owl:Class .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  urn:absolute:niem/test#b1
-:b1 rdf:type owl:NamedIndividual ,
-             :Map ;
-    :name "Marauder's Map"^^xsd:string ;
-    :private "true"^^xsd:boolean .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#b1
+niem:b1 rdf:type owl:NamedIndividual ,
+                 niem:Map ;
+        niem:name "Marauder's Map"^^xsd:string ;
+        niem:private "true"^^xsd:boolean .
 
 
-###  urn:absolute:niem/test#b2
-:b2 rdf:type owl:NamedIndividual ,
-             :Bird ;
-    :name "Hedwig"^^xsd:string .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#b2
+niem:b2 rdf:type owl:NamedIndividual ,
+                 niem:Bird ;
+        niem:name "Hedwig"^^xsd:string .
 
 
-###  urn:absolute:niem/test#b3
-:b3 rdf:type owl:NamedIndividual ,
-             :Person ;
-    :name "Harry Potter"^^xsd:string .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#b3
+niem:b3 rdf:type owl:NamedIndividual ,
+                 niem:Person ;
+        niem:name "Harry Potter"^^xsd:string .
 
 
-###  urn:absolute:niem/test#b4
-:b4 rdf:type owl:NamedIndividual ,
-             :Ownership ;
-    :ownedItem :b2 ;
-    :owner :b3 ;
-    :private "true"^^xsd:boolean .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#b4
+niem:b4 rdf:type owl:NamedIndividual ,
+                 niem:Ownership ;
+        niem:ownedItem niem:b2 ;
+        niem:owner niem:b3 ;
+        niem:private "true"^^xsd:boolean .
 
 
-###  urn:absolute:niem/test#b5
-:b5 rdf:type owl:NamedIndividual ,
-             :Ownership ;
-    :ownedItem :b1 ;
-    :owner :b3 .
+###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#b5
+niem:b5 rdf:type owl:NamedIndividual ,
+                 niem:Ownership ;
+        niem:ownedItem niem:b1 ;
+        niem:owner niem:b3 .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
