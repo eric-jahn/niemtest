@@ -1,38 +1,38 @@
 {
   "@context" : {
     "ownsItem" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#ownsItem",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#ownsItem",
       "@type" : "@id"
     },
     "owner" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#owner",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#owner",
       "@type" : "@id"
     },
     "Bird" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Bird"
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#Bird"
     },
     "Thing" : {
       "@id" : "http://www.w3.org/2002/07/owl#Thing"
     },
     "Map" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Map"
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#Map"
     },
     "isPrivate" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#isPrivate",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#isPrivate",
       "@type" : "@id"
     },
     "Ownership" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Ownership"
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#Ownership"
     },
     "private" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#private",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#private",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "Person" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Person"
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#Person"
     },
     "name" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#name",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#name",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "topObjectProperty" : {
@@ -40,11 +40,11 @@
       "@type" : "@id"
     },
     "ownedItem" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#ownedItem",
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#ownedItem",
       "@type" : "@id"
     },
     "Item" : {
-      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple/test#Item"
+      "@id" : "https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple.jsonld#Item"
     }
   }
 }
