@@ -1,121 +1,78 @@
-@prefix : <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix niem: <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple> .
-
-<https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple> rdf:type owl:Ontology ;
-                                                                         owl:versionIRI <https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple:v0.0.1> .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#isPrivate
-niem:isPrivate rdf:type owl:ObjectProperty ;
-               rdfs:domain owl:Thing ;
-               rdfs:range [ rdf:type owl:Restriction ;
-                            owl:onProperty niem:private ;
-                            owl:someValuesFrom xsd:boolean
-                          ] .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownedItem
-niem:ownedItem rdf:type owl:ObjectProperty ;
-               rdfs:domain niem:Ownership ;
-               rdfs:range niem:Person .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#owner
-niem:owner rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain niem:Ownership ;
-           rdfs:range niem:Item .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownsItem
-niem:ownsItem rdf:type owl:ObjectProperty ;
-              rdfs:domain niem:Person ;
-              rdfs:range niem:Item .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#name
-niem:name rdf:type owl:DatatypeProperty ;
-          rdfs:domain owl:Thing ;
-          rdfs:range xsd:string .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#private
-niem:private rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:boolean .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Bird
-niem:Bird rdf:type owl:Class ;
-          rdfs:subClassOf niem:Item .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item
-niem:Item rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Map
-niem:Map rdf:type owl:Class ;
-         rdfs:subClassOf niem:Item .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership
-niem:Ownership rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Person
-niem:Person rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b1
-niem:b1 rdf:type owl:NamedIndividual ,
-                 niem:Map ;
-        niem:name "Marauder's Map"^^xsd:string ;
-        niem:private "true"^^xsd:boolean .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b2
-niem:b2 rdf:type owl:NamedIndividual ,
-                 niem:Bird ;
-        niem:name "Hedwig"^^xsd:string .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b3
-niem:b3 rdf:type owl:NamedIndividual ,
-                 niem:Person ;
-        niem:name "Harry Potter"^^xsd:string .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b4
-niem:b4 rdf:type owl:NamedIndividual ,
-                 niem:Ownership ;
-        niem:ownedItem niem:b2 ;
-        niem:owner niem:b3 ;
-        niem:private "true"^^xsd:boolean .
-
-
-###  https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b5
-niem:b5 rdf:type owl:NamedIndividual ,
-                 niem:Ownership ;
-        niem:ownedItem niem:b1 ;
-        niem:owner niem:b3 .
+[{"@id":"_:b0",
+"@type":["http://www.w3.org/2002/07/owl#Restriction"],
+"http://www.w3.org/2002/07/owl#onProperty":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#private"}],
+"http://www.w3.org/2002/07/owl#someValuesFrom":[{"@id":"http://www.w3.org/2001/XMLSchema#boolean"}]},
+{"@id":"http://www.w3.org/2001/XMLSchema#boolean"},
+{"@id":"http://www.w3.org/2001/XMLSchema#string"},
+{"@id":"http://www.w3.org/2002/07/owl#Class"},
+{"@id":"http://www.w3.org/2002/07/owl#DatatypeProperty"},
+{"@id":"http://www.w3.org/2002/07/owl#NamedIndividual"},
+{"@id":"http://www.w3.org/2002/07/owl#ObjectProperty"},
+{"@id":"http://www.w3.org/2002/07/owl#Ontology"},
+{"@id":"http://www.w3.org/2002/07/owl#Restriction"},
+{"@id":"http://www.w3.org/2002/07/owl#Thing"},
+{"@id":"http://www.w3.org/2002/07/owl#topObjectProperty"},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple",
+"@type":["http://www.w3.org/2002/07/owl#Ontology"],
+"http://www.w3.org/2002/07/owl#versionIRI":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple:v0.0.1"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Bird",
+"@type":["http://www.w3.org/2002/07/owl#Class"],
+"http://www.w3.org/2000/01/rdf-schema#subClassOf":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item",
+"@type":["http://www.w3.org/2002/07/owl#Class"]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Map",
+"@type":["http://www.w3.org/2002/07/owl#Class"],
+"http://www.w3.org/2000/01/rdf-schema#subClassOf":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership",
+"@type":["http://www.w3.org/2002/07/owl#Class"]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Person",
+"@type":["http://www.w3.org/2002/07/owl#Class"]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b1",
+"@type":["http://www.w3.org/2002/07/owl#NamedIndividual",
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Map"],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#name":[{"@value":"Marauder's Map"}],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#private":[{"@value":true}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b2",
+"@type":["http://www.w3.org/2002/07/owl#NamedIndividual",
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Bird"],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#name":[{"@value":"Hedwig"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b3",
+"@type":["http://www.w3.org/2002/07/owl#NamedIndividual",
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Person"],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#name":[{"@value":"Harry Potter"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b4",
+"@type":["http://www.w3.org/2002/07/owl#NamedIndividual",
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership"],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownedItem":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b2"}],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#owner":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b3"}],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#private":[{"@value":true}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b5",
+"@type":["http://www.w3.org/2002/07/owl#NamedIndividual",
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership"],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownedItem":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b1"}],
+"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#owner":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#b3"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#isPrivate",
+"@type":["http://www.w3.org/2002/07/owl#ObjectProperty"],
+"http://www.w3.org/2000/01/rdf-schema#domain":[{"@id":"http://www.w3.org/2002/07/owl#Thing"}],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"_:b0"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#name",
+"@type":["http://www.w3.org/2002/07/owl#DatatypeProperty"],
+"http://www.w3.org/2000/01/rdf-schema#domain":[{"@id":"http://www.w3.org/2002/07/owl#Thing"}],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"http://www.w3.org/2001/XMLSchema#string"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownedItem",
+"@type":["http://www.w3.org/2002/07/owl#ObjectProperty"],
+"http://www.w3.org/2000/01/rdf-schema#domain":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership"}],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Person"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#owner",
+"@type":["http://www.w3.org/2002/07/owl#ObjectProperty"],
+"http://www.w3.org/2000/01/rdf-schema#subPropertyOf":[{"@id":"http://www.w3.org/2002/07/owl#topObjectProperty"}],
+"http://www.w3.org/2000/01/rdf-schema#domain":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Ownership"}],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#ownsItem",
+"@type":["http://www.w3.org/2002/07/owl#ObjectProperty"],
+"http://www.w3.org/2000/01/rdf-schema#domain":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Person"}],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#Item"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple#private",
+"@type":["http://www.w3.org/2002/07/owl#DatatypeProperty"],
+"http://www.w3.org/2000/01/rdf-schema#range":[{"@id":"http://www.w3.org/2001/XMLSchema#boolean"}]},
+{"@id":"https://raw.githubusercontent.com/eric-jahn/niemtest/main/simple:v0.0.1"}]
